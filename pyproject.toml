@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dinoad"
+version = "0.1.0"
+description = "Layer-wise DINOv2/v3 features for PatchCore anomaly detection on MVTec AD"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.1",
+    "torchvision>=0.16",
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "matplotlib",
+    "pandas",
+    "pillow",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "nbformat", "nbconvert", "ipykernel"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

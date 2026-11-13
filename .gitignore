@@ -1,0 +1,10 @@
+__pycache__/
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+# data, caches and results live on Google Drive, not in git
+data/
+cache/
+outputs/
+*.pt
+*.pth

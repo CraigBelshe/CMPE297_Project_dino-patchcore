@@ -1,0 +1,10 @@
+# Colab already ships all of these; `pip install -e .` from the repo root is enough.
+torch>=2.1
+torchvision>=0.16
+numpy
+scipy
+scikit-learn
+matplotlib
+pandas
+pillow
+tqdm
