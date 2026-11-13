@@ -1,5 +1,7 @@
 # Experiment plan
 
+> Exact commands for each experiment are in the README, section 5 ("Recipes for each experiment").
+
 **Research question:** which DINO layer gives the best trade-off between memory-bank size,
 speed, and anomaly-detection accuracy, for texture vs. object categories?
 

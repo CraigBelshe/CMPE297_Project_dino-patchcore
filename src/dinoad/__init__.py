@@ -9,6 +9,7 @@ patchcore   memory bank, greedy coreset, random-projection/PCA, kNN scoring
 metrics     image AUROC, pixel AUROC, PRO
 efficiency  memory-bank footprint, per-stage latency / FPS
 experiment  run_category / run_domain convenience runners
+run         command-line sweep runner: python -m dinoad.run --help
 results     append-only CSV log + summaries
 viz         heatmaps and trade-off plots
 synthetic   fake MVTec-style data for smoke tests
