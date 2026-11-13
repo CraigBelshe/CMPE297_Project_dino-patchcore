@@ -1,4 +1,4 @@
-# dino-patchcore: finding the best DINO layer for fast anomaly detection
+# CMPE297_Project_dino-patchcore: finding the best DINO layer for fast anomaly detection
 
 CMPE297 final project: Craig Belshe, Esther Hammon, Raymond Leung.
 
@@ -29,7 +29,7 @@ The experiment plan (what to run and why) is in **[docs/EXPERIMENTS.md](docs/EXP
 ## 1. Repo layout
 
 ```
-dino-patchcore/
+CMPE297_Project_dino-patchcore/
 ├── README.md                 <- you are here
 ├── docs/EXPERIMENTS.md       experiment plan E0–E8
 ├── notebooks/
@@ -55,23 +55,29 @@ dino-patchcore/
 
 ## 2. One-time setup (do this once per team)
 
-### 2.1 Put the code on GitHub
+### 2.1 The GitHub repo
+
+The code lives at **https://github.com/CraigBelshe/CMPE297_Project_dino-patchcore** (private).
+The repo owner adds the other teammates under **Settings → Collaborators**. Each teammate accepts the
+email invite, then clones the repo:
 
 ```bash
-unzip dino-patchcore.zip && cd dino-patchcore
-# create an empty repo on GitHub first (e.g. <your-team>/dino-patchcore), then:
-git remote add origin https://github.com/<your-team>/dino-patchcore.git
-git push -u origin main
+git clone https://github.com/CraigBelshe/CMPE297_Project_dino-patchcore.git
 ```
 
-Add the other two teammates as collaborators. If the repo is **private**, Colab needs a token to
-clone it. Create a fine-grained GitHub personal access token with read access, store it in
-Colab's **Secrets** panel (key icon) as `GH_TOKEN`, and use this URL in the notebook:
+Because the repo is **private**, Colab needs a token to clone it. Each person:
+
+1. Creates a fine-grained personal access token (GitHub → **Settings → Developer settings →
+   Fine-grained tokens**) with **Contents: Read** on this repo.
+2. Saves it in Colab's **Secrets** panel (key icon in the left sidebar) as `GH_TOKEN`, with notebook access turned on.
+3. Replaces `REPO_URL` in the notebook's first code cell with:
 
 ```python
 from google.colab import userdata
-REPO_URL = f"https://{userdata.get('GH_TOKEN')}@github.com/<your-team>/dino-patchcore.git"
+REPO_URL = f"https://{userdata.get('GH_TOKEN')}@github.com/CraigBelshe/CMPE297_Project_dino-patchcore.git"
 ```
+
+Alternatively, make the repo public (**Settings → General → Danger Zone**); it contains no data or weights.
 
 ### 2.2 Create the shared Google Drive folder
 
@@ -139,12 +145,12 @@ Request DINOv3 access early, since approval can take time.
 
 1. Open `notebooks/01_patchcore_mvtec.ipynb` in Colab (**File → Open notebook → GitHub**, or upload it).
 2. **Runtime → Change runtime type → GPU.** An L4 or T4 is enough; an A100 is not needed.
-3. In the first code cell, set `REPO_URL` (section 2.1).
+3. Because the repo is private, set `REPO_URL` in the first code cell to the token URL (section 2.1).
 4. Edit the **Config** cell (reference below). On a fresh setup, run once with
    `USE_SYNTHETIC = True` to check that everything installs and runs before you touch real data.
 5. **Runtime → Run all.**
 
-The setup cell mounts Drive, clones the repo to `/content/dino-patchcore` (or runs `git pull` if
+The setup cell mounts Drive, clones the repo to `/content/CMPE297_Project_dino-patchcore` (or runs `git pull` if
 it's already there), and installs it with `pip install -e`. After you push code changes, rerun
 that cell to pick them up, and restart the runtime if a module was already imported.
 
